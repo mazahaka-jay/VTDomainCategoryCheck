@@ -23,14 +23,11 @@ def main():
     headers = {"x-apikey": API_KEY}
 
     # Replace domains_list with your list of domains
-    domains_list = ["academy.zfx.com","survey-smiles.com", "admin-academy.zfx.com", "zfx.com", "api.zfx.com", "admin.zfx.com"]
-    #"academy.zfx.com", "admin-academy.zfx.com", "zfx.com", "api.zfx.com", "admin.zfx.com"
+    domains_list = ["domain1","domain2"]
     for domain in domains_list:
         check_domain_vt(domain, headers, conn)
         time.sleep(1)
         check_domain_urls_vt(domain, headers, conn)
-
-        #check_domain_url_vt(domain, headers, conn)
 
     get_results_from_results_report_table(conn)
 
